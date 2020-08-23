@@ -1,49 +1,104 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/deal_list_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_alignParentTop="true"
-    android:background="@drawable/white_color"
-    android:orientation="horizontal"
+    android:background="@color/white"
     android:padding="5dp">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/deal_list_item_image_view"
+        android:layout_width="@dimen/deal_list_item_image_size"
+        android:layout_height="0dp"
+        android:contentDescription="@string/product_image_content_description"
+        android:src="@drawable/image_14741397"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/deal_list_item_title"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_horizontal_margin"
-        android:orientation="vertical">
+        android:paddingVertical="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:contentDescription="title"
+        android:gravity="left"
+        android:text="title"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/deal_list_item_image_view"
+        app:layout_constraintStart_toEndOf="@+id/deal_list_item_image_view"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/deal_list_item_image_view"
-            android:layout_width="@dimen/deal_list_item_image_size"
-            android:layout_height="@dimen/deal_list_item_image_size"
-            android:contentDescription="@string/product_image_content_description"/>
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="@id/deal_list_item_title"
+        app:layout_constraintLeft_toLeftOf="@id/deal_list_item_title"
+        app:layout_constraintRight_toRightOf="@id/deal_list_item_title" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/deal_list_item_price"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_horizontal_margin"
-        android:orientation="vertical">
+        android:contentDescription="price"
+        android:text="price"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/deal_list_item_image_view"
+        app:layout_constraintTop_toTopOf="@id/view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:gravity="left"/>
 
-        <TextView
-            android:id="@+id/deal_list_item_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:contentDescription="title" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@drawable/gray_color"></LinearLayout>
-        <TextView
-            android:id="@+id/deal_list_item_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:contentDescription="price" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/ship"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="price"
+        android:text="ship"
+        android:textSize="18sp"
+        app:layout_constraintRight_toLeftOf="@id/or"
+        app:layout_constraintTop_toTopOf="@id/view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="3dp"
+        android:paddingVertical="10dp"
+        android:gravity="left"/>
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:alpha=".5"
+        android:contentDescription="price"
+        android:text="or"
+        android:textSize="18sp"
+        app:layout_constraintRight_toLeftOf="@id/location"
+        app:layout_constraintTop_toTopOf="@id/view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="3dp"
+        android:paddingVertical="10dp"
+        android:gravity="left"/>
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:contentDescription="price"
+        android:textColor="@android:color/holo_red_light"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="B22"
+        android:background="@drawable/grey_circle"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="@id/view"
+        app:layout_constraintTop_toTopOf="@id/view"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

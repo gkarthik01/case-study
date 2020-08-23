@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <drawable name="actionbar_color">#ffcc0000</drawable>
-    <drawable name="white_color">#ffffffff</drawable>
-    <drawable name="gray_color">#ff666666</drawable>
+    <color name="actionBar">#ffcc0000</color>
+    <color name="white">#ffffffff</color>
+    <color name="gray">#ff666666</color>
 </resources>

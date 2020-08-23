@@ -4,6 +4,6 @@
     </style>
     <style name="TargetActionBar"
         parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@drawable/actionbar_color</item>
+        <item name="android:background">@color/actionBar</item>
     </style>
 </resources>
