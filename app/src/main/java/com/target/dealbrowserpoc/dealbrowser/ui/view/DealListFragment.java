@@ -1,24 +1,18 @@
-package com.target.dealbrowserpoc.dealbrowser;
+package com.target.dealbrowserpoc.dealbrowser.ui.view;
 
 import android.app.Activity;
-import android.app.ListFragment;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
+import androidx.fragment.app.ListFragment;
+
+import com.target.dealbrowserpoc.dealbrowser.DealListItemAdapter;
 import com.target.dealbrowserpoc.dealbrowser.deals.DealContent;
 
 public class DealListFragment extends ListFragment {
 
     private OnFragmentInteractionListener mListener;
-
-    public static DealListFragment newInstance() {
-        DealListFragment fragment = new DealListFragment();
-        return fragment;
-    }
-
-    public DealListFragment() {
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,7 +44,7 @@ public class DealListFragment extends ListFragment {
         super.onListItemClick(l, v, position, id);
 
         if (null != mListener) {
-            mListener.onFragmentInteraction(DealContent.ITEMS.get(position).id);
+            mListener.onFragmentInteraction(DealContent.ITEMS.get(position).getId());
         }
     }
 

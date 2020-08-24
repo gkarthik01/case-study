@@ -22,7 +22,7 @@ public class DealListItemAdapter extends BaseAdapter {
         return new DealListItemAdapter(context, items);
     }
 
-    protected DealListItemAdapter(Context ctx, List<DealItem> items) {
+    public DealListItemAdapter(Context ctx, List<DealItem> items) {
         super();
         context = ctx;
         inflater = LayoutInflater.from(context);
@@ -66,8 +66,8 @@ public class DealListItemAdapter extends BaseAdapter {
 
         DealItem dealItem = dealItems.get(position);
         holder.productImage.setImageBitmap(dealItem.getProductImage(context));
-        holder.title.setText(dealItem.title);
-        holder.price.setText(dealItem.salePrice);
+        holder.title.setText(dealItem.getTitle());
+        holder.price.setText(dealItem.getSalePrice());
 
         return view;
     }
