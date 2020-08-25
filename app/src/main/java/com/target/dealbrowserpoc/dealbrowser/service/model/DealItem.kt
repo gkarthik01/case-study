@@ -1,8 +1,5 @@
-package com.target.dealbrowserpoc.dealbrowser.deals
+package com.target.dealbrowserpoc.dealbrowser.service.model
 
-import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
@@ -26,17 +23,17 @@ data class DealItem(
         var originalPrice: String,
 
         @SerializedName("salePrice")
-        var salePrice: String,
+        var salePrice: String?,
 
         @SerializedName("image")
-        var image: Int,
+        var image: String,
 
         @SerializedName("aisle")
         var aisle: String): Parcelable{
 
-    fun getProductImage(context: Context): Bitmap {
-        return BitmapFactory.decodeResource(context.resources, image)
-    }
+//    fun getProductImage(context: Context): Bitmap {
+//        return BitmapFactory.decodeResource(context.resources, image)
+//    }
 
     override fun toString(): String {
         return title

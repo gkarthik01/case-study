@@ -2,17 +2,18 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.view.DealDetailsFragment">
+    tools:context=".deals.ui.view.DealDetailsFragment">
     <data>
         <variable
             name="viewModel"
-            type="com.target.dealbrowserpoc.dealbrowser.ui.viewModel.DealsViewModel" />
+            type="com.target.dealbrowserpoc.dealbrowser.deals.ui.viewModel.DealDetailsViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/dealDetailIV"
             android:padding="30dp"
             android:layout_width="300dp"
             android:maxHeight="400dp"
@@ -21,9 +22,7 @@
             app:layout_constraintBottom_toTopOf="@id/salePrice"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:contentDescription="@string/product_image_content_description"
-            android:src="@drawable/image_14741397"
-            android:scaleType="fitXY" />
+            android:contentDescription="@string/product_image_content_description" />
 
         <TextView
             android:id="@+id/salePrice"
@@ -35,7 +34,7 @@
             android:textColor="@android:color/holo_red_light"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toTopOf="@id/title"
-            android:text="$8.99"/>
+            android:text="@{viewModel.salePrice}"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -59,7 +58,7 @@
             android:textColor="@color/gray"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toTopOf="@id/title"
-            android:text="$3.99"/>
+            android:text="@{viewModel.originalPrice}"/>
 
         <TextView
             android:id="@+id/title"
@@ -68,7 +67,7 @@
             android:layout_margin="10dp"
             android:textSize="24sp"
             android:textColor="@color/gray"
-            android:text="Tiered Lace Tank - Lily Star"
+            android:text="@{viewModel.title}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toTopOf="@id/descriptionTV"/>
 
@@ -79,7 +78,7 @@
             android:layout_margin="10dp"
             android:textColor="@color/gray"
             android:textSize="12sp"
-            android:text="Product description goes here Lorem Ipsum Product description goes here Lorem Ipsum Product description goes here Lorem Ipsum Product description goes here Lorem Ipsum Product description goes here Lorem Ipsum Product description goes here Lorem Ipsum Product description goes here Lorem Ipsum Product description goes here Lorem Ipsum Product description goes here Lorem Ipsum Product description goes here Lorem Ipsum Product description goes here Lorem Ipsum Product description goes here Lorem Ipsum"
+            android:text="@{viewModel.description}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toTopOf="@id/addToCartBtn"/>
 

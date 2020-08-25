@@ -6,7 +6,7 @@
     app:startDestination="@id/dealListFragment">
     <fragment
         android:id="@+id/dealListFragment"
-        android:name="com.target.dealbrowserpoc.dealbrowser.ui.view.DealListFragment"
+        android:name="com.target.dealbrowserpoc.dealbrowser.deals.ui.view.DealListFragment"
         android:label="fragment_deal_list"
         tools:layout="@layout/fragment_deal_list" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.target.dealbrowserpoc.dealbrowser.ui.view.DealDetailsFragment"
+        android:name="com.target.dealbrowserpoc.dealbrowser.deals.ui.view.DealDetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" />
 
