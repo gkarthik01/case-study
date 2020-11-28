@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.target.dealbrowserpoc.dealbrowser.service.model.DealItem
 import kotlinx.android.synthetic.main.deal_list_item.view.*
-import kotlinx.android.synthetic.main.fragment_details.*
 
 class DealListItemAdapter(
         private val context: Context,
@@ -31,7 +30,10 @@ class DealListItemAdapter(
                 .fit().into(holder.productImage)
         holder.location.text = item.aisle
         holder.itemView.setOnClickListener {
-            onItemClickListener.onItemClicked(item)
+            onItemClickListener.onItemClicked(item, it)
+        }
+        with(holder.itemView){
+            transitionName = item.id
         }
     }
 
@@ -55,6 +57,6 @@ class DealListItemAdapter(
     }
 
     interface OnItemClickListener {
-        fun onItemClicked(item: DealItem)
+        fun onItemClicked(item: DealItem, view: View)
     }
 }
